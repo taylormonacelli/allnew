@@ -35,7 +35,7 @@ check: .timestamps/.check.time
 build: $(BIN)
 
 $(BIN): .timestamps/.build.time .timestamps/.tidy.time
-	go build -ldflags "$(LDFLAGS)" -o $@ cmd/main.go
+	go build -ldflags "$(LDFLAGS)" -o $@ cmd/{{ cookiecutter.project_slug }}/main.go
 
 .timestamps/.build.time: $(SRC)
 	@mkdir -p .timestamps
